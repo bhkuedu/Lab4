@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<style>
+body {
+    background-color: black;
+    background-image: url("https://science.nasa.gov/wp-content/uploads/2023/09/rings-1080-gif-detail.gif");
+    background-size: cover;
+    color: lightgreen;
+    text-align: center;
+}
+p {
+    border: 2px solid orange;
+    width: max-content;
+}
+h1 {
+    color: lightcoral;
+    text-align: center;
+}
+img::after {
+    content: attr(alt);
+    display: block;
+}
+</style>
+    <h1>Practice 2: User Configurable CSS!</h1>
+</head>
+
+<body>
+<div align="center">
+<p id="paragraph">Wow. Much Text. Very byte.</p><br>
+<input type="text" placeholder="Text color! (R, G, B)" oninput="changeParagraphColor(this.value)"></input>
+<input type="text" placeholder="Border color! (R, G, B)" oninput="changeBorderColor(this.value)"></input>
+<input type="text" placeholder="Border width! (Number)" oninput="changeBorderWidth(this.value)"></input>
+
+</div>
+</body>
+<script>
+function changeParagraphColor(value) {
+    var paragraph = document.getElementById("paragraph");
+    paragraph.style.color = "rgb(" + value + ")";
+};
+function changeBorderColor(value) {
+    var paragraph = document.getElementById("paragraph");
+    paragraph.style.borderColor = "rgb(" + value + ")";
+}
+function changeBorderWidth(value) {
+    var paragraph = document.getElementById("paragraph");
+    paragraph.style.borderWidth = value;
+    //print("Paragraph: " + value);
+}
+</script>
+</html>
