@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<style>
+body {
+    background-color: black;
+    background-image: url("https://science.nasa.gov/wp-content/uploads/2023/09/rings-1080-gif-detail.gif");
+    background-size: cover;
+    color: lightgreen;
+    text-align: left;
+}
+p {
+    color: white;
+    width: max-content;
+}
+h1 {
+    color: lightcoral;
+    text-align: center;
+}
+</style>
+    <h1>Practice 4: PHP Table!</h1>
+</head>
+
+<body>
+<form method="post">
+    Enter number:
+    <input type="number" name="Number">
+    <input type="submit" value="Generate Table">
+</form></body>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $number = $_POST["Number"];
+
+    echo "<h2>Multiplication table for " . $number . "</h2>";
+    echo "<table border='1'>";
+
+    echo "<tr>";
+    echo "<td>" . "_" . "</td>";
+    for ($i = 1; $i <= $number; $i++) {
+        echo "<td>" . $i . "x  " . "</td>";
+    }
+    echo "</tr>";
+
+    for ($i = 1; $i <= $number; $i++) {
+        echo "<tr>";
+        echo "<td>" . $i . "x  " . "</td>";
+        for ($j = 1; $j <= $number; $j++) {
+            echo "<td>" . $i * $j . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+?>
+</html>
